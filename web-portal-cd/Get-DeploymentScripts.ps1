@@ -1,7 +1,7 @@
 # ---- VARIABLES ----
 $ErrorActionPreference = 'Stop'
 $ExecutionPath = Split-Path -parent $PSCommandPath
-$ArtifactsBucket = 'ddwa-deployment'
+$ArtifactsBucket = 'deployment'
 $DeploymentFiles = @('Deploy-WebPortalCD.ps1', 'Validate-ContentDelivery.ps1', 'Start-ContentDelivery.ps1', 'Stop-ContentDelivery.ps1', 'Cleanup-Artifacts.ps1')
 
 # ---- MAIN ----

@@ -29,7 +29,7 @@ return true;
     [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
     
-    $TestHost = "127.0.0.1  ddwa.privatealb.com"
+    $TestHost = "127.0.0.1  privatealb.com"
     
     "`r`n" + $TestHost | Out-File -FilePath ( $env:windir + '\System32\drivers\etc\hosts' ) -Append -Encoding default
     
@@ -38,7 +38,7 @@ return true;
     Write-Output "Connection to solr successful: $InvokeResponse"
     
     Write-Output 'Precaching site'
-    $InvokeResponse = (Invoke-WebRequest -UseBasicParsing -Uri 'https://ddwa.privatealb.com').StatusCode
+    $InvokeResponse = (Invoke-WebRequest -UseBasicParsing -Uri 'https://privatealb.com').StatusCode
     Write-Output "Invoke-WebRequest completed, status code: $InvokeResponse"
     
     $HostsFile = Get-Content -Path ( $env:windir + '\System32\drivers\etc\hosts' ) -Encoding default | `
@@ -51,7 +51,7 @@ return true;
 }
 catch 
 {
-    $TestHost = "127.0.0.1  ddwa.privatealb.com"
+    $TestHost = "127.0.0.1  privatealb.com"
     $HostsFile = Get-Content -Path ( $env:windir + '\System32\drivers\etc\hosts' ) -Encoding default | `
         Where-Object { $_ -notmatch $TestHost } | Out-String 
         
