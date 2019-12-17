@@ -1,7 +1,7 @@
 #
 $ErrorActionPreference = 'Stop'
 $ExecutionPath = Split-Path -parent $PSCommandPath
-$ArtifactsBucket = 'ddwa-deployment'
+$ArtifactsBucket = 'deployment'
 $DeploymentFiles = @('Deploy-WebPortalCSR.ps1', 'Start-IIS.ps1', 'Stop-IIS.ps1', 'Cleanup-Artifacts.ps1')
 
 #

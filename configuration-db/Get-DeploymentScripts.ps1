@@ -1,7 +1,7 @@
 # ---- VARIABLES ----
 $ErrorActionPreference = 'Stop'
 $ExecutionPath = Split-Path -parent $PSCommandPath
-$ArtifactsBucket = 'ddwa-deployment'
+$ArtifactsBucket = 'deployment'
 $DeploymentFiles = @('Deploy-ConfigurationDB.ps1', 'Create-File.ps1', 'Cleanup-Artifacts.ps1')
 
 # ---- MAIN ----
