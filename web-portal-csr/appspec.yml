@@ -1,0 +1,15 @@
+version: 0.0
+os: windows
+hooks:
+  BeforeInstall:
+    - location: \Get-DeploymentScripts.ps1
+      timeout: 300
+    - location: \Stop-IIS.ps1
+      timeout: 300
+  ApplicationStart:
+    - location: \Deploy-WebPortalCSR.ps1
+      timeout: 300
+    - location: \Cleanup-Artifacts.ps1
+      timeout: 300
+    - location: \Start-IIS.ps1
+      timeout: 300
